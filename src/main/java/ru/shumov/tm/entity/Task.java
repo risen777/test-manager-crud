@@ -1,10 +1,17 @@
 package ru.shumov.tm.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.util.Random;
+import java.util.UUID;
+
+@Entity
 public class Task {
+    @Id
+    private String id = UUID.randomUUID().toString();
     private String name;
-    private String id;
 
-
+  //  private String id;
     public String getName() {
         return name;
     }
@@ -19,5 +26,12 @@ public class Task {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Project{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }

@@ -1,4 +1,4 @@
-package ru.shumov.tm.endpoint;
+package ru.shumov.tm.api;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;

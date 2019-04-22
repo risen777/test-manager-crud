@@ -1,5 +1,6 @@
 package ru.shumov.tm.endpoint;
 
+import ru.shumov.tm.api.TaskEndpoint;
 import ru.shumov.tm.entity.Task;
 import ru.shumov.tm.services.TaskService;
 
@@ -11,7 +12,7 @@ import java.util.List;
 
 
 
-@WebService(endpointInterface = "ru.shumov.tm.endpoint.TaskEndpoint")
+@WebService(endpointInterface = "ru.shumov.tm.api.TaskEndpoint")
 public class TaskEndpointBean implements TaskEndpoint {
 
     private TaskService taskService;
@@ -37,7 +38,7 @@ public class TaskEndpointBean implements TaskEndpoint {
 
     @Override
     @WebMethod
-    public Task merge(@WebParam(name = "task") Task task) {
+    public Task mergeTask(@WebParam(name = "task") Task task) {
         return taskService.merge(task);
     }
 

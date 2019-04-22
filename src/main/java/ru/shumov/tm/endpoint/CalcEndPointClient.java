@@ -2,6 +2,8 @@ package ru.shumov.tm.endpoint;
 
 
 
+import ru.shumov.tm.api.CalcEndPoint;
+
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 import java.net.MalformedURLException;

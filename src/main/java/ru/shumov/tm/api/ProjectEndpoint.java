@@ -1,4 +1,4 @@
-package ru.shumov.tm.endpoint;
+package ru.shumov.tm.api;
 
 import ru.shumov.tm.entity.Project;
 
@@ -13,7 +13,7 @@ public interface ProjectEndpoint {
     Project createProject(@WebParam(name = "name") String name);
 
     @WebMethod
-    Project merge(@WebParam(name = "project") Project project);
+    Project mergeProject(@WebParam(name = "project") Project project);
 
     @WebMethod
     Project getProjectById(@WebParam(name = "id") String id);

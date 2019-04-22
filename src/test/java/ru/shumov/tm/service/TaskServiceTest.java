@@ -2,13 +2,15 @@ package ru.shumov.tm.service;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
+import ru.shumov.tm.category.UnitTests;
 import ru.shumov.tm.entity.Task;
 import ru.shumov.tm.repository.TaskRepository;
 import ru.shumov.tm.services.TaskService;
 
 
 public class TaskServiceTest {
-
+    @Category(UnitTests.class)
     @Test
     public void testEmpty() {
         final TaskRepository taskRepository = new TaskRepository();
@@ -16,6 +18,7 @@ public class TaskServiceTest {
         Assert.assertTrue(taskService.getListTask().isEmpty());
     }
 
+    @Category(UnitTests.class)
     @Test
     public void testList() {
         final TaskRepository taskRepository = new TaskRepository();
@@ -26,7 +29,7 @@ public class TaskServiceTest {
         taskService.merge(new Task());
         Assert.assertFalse(taskService.getListTask().isEmpty());
     }
-
+    @Category(UnitTests.class)
     @Test
     public void testCreate() {
         final TaskRepository taskRepository = new TaskRepository();
@@ -38,7 +41,7 @@ public class TaskServiceTest {
         Assert.assertFalse(taskService.getListTask().isEmpty());
         Assert.assertNotNull(taskService.getTaskById(task.getId()));
     }
-
+    @Category(UnitTests.class)
     @Test
     public void testClear() {
         final TaskRepository taskRepository = new TaskRepository();

@@ -8,19 +8,24 @@ import ru.shumov.tm.repository.TaskRepository;
 import ru.shumov.tm.services.ProjectService;
 import ru.shumov.tm.services.TaskService;
 
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.util.Scanner;
 
 /**
  * Hello world!
  */
 public class App {
+
+    public   static final  EntityManagerFactory emf = Persistence.createEntityManagerFactory("tm");
+
     private static final Scanner scanner = new Scanner(System.in);
-    private final TaskRepository taskRepository = new TaskRepository();
-    private final ProjectRepository projectRepository = new ProjectRepository();
+    private final TaskRepository taskRepository = new TaskRepository(emf);
+    private final ProjectRepository projectRepository = new ProjectRepository(emf);
 
     private final TaskService taskService = new TaskService(taskRepository);
 
-    private final ProjectService projectService = new ProjectService(projectRepository);
+    private  final ProjectService projectService = new ProjectService(projectRepository);
 
     public static void main(String[] args) {
 

@@ -4,6 +4,8 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
+import ru.shumov.tm.category.UnitTests;
 import ru.shumov.tm.entity.Task;
 import ru.shumov.tm.repository.TaskRepository;
 import ru.shumov.tm.services.TaskService;
@@ -12,6 +14,7 @@ import ru.shumov.tm.services.TaskService;
  * Unit test for simple App.
  */
 public class AppTest {
+
     /**
      * Rigorous Test :-)
      */
@@ -20,6 +23,7 @@ public class AppTest {
 //    {
 //        assertTrue( true );
 //    }
+    @Category(UnitTests.class)
     @Test
     public void testCreate() {
 

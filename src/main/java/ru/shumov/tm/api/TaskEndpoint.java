@@ -1,4 +1,4 @@
-package ru.shumov.tm.endpoint;
+package ru.shumov.tm.api;
 
 import ru.shumov.tm.entity.Task;
 
@@ -20,7 +20,7 @@ public interface TaskEndpoint {
     Task getTaskById(@WebParam(name = "id") String id);
 
     @WebMethod
-    Task merge(@WebParam(name = "task") Task task);
+    Task mergeTask(@WebParam(name = "task") Task task);
 
     @WebMethod
     void removeTaskById(@WebParam(name = "id") String id);

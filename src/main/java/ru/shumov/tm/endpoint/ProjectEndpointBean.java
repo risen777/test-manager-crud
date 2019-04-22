@@ -1,5 +1,6 @@
 package ru.shumov.tm.endpoint;
 
+import ru.shumov.tm.api.ProjectEndpoint;
 import ru.shumov.tm.entity.Project;
 import ru.shumov.tm.services.ProjectService;
 
@@ -7,8 +8,9 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 import java.util.List;
-@WebService(endpointInterface = "ru.shumov.tm.endpoint.ProjectEndpoint")
+@WebService(endpointInterface = "ru.shumov.tm.api.ProjectEndpoint")
 public class ProjectEndpointBean implements ProjectEndpoint {
+    public static final String WSDL = "http://localhost:8080/ProjectEndpointBean?wsdl";
 
     private ProjectService projectService;
 
@@ -27,7 +29,7 @@ public class ProjectEndpointBean implements ProjectEndpoint {
 
     @Override
     @WebMethod
-    public Project merge(@WebParam(name = "project") Project project) {
+    public Project mergeProject(@WebParam(name = "project") Project project) {
         return projectService.merge(project);
     }
 

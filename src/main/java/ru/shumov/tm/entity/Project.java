@@ -1,9 +1,13 @@
 package ru.shumov.tm.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Date;
 import java.util.UUID;
 
+@Entity
 public class Project {
+    @Id
     private  String id = UUID.randomUUID().toString();
     private  String name = "";
     private Date dateBegin;
@@ -39,5 +43,12 @@ public class Project {
 
     public void setDateEnd(Date dateEnd) {
         this.dateEnd = dateEnd;
+    }
+
+    @Override
+    public String toString() {
+        return "Project{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }
