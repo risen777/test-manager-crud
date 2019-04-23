@@ -21,14 +21,11 @@ public class CalcEndpointBean implements CalcEndPoint {
         return a + b;
     }
 
-
     public static void main(String[] args) {
-        Endpoint.publish("http://localhost:8080/CalcEndPoint?wsdl",
-                new CalcEndpointBean()
-        );
-
+        Endpoint.publish(WSDL, new CalcEndpointBean());
     }
-}
+    }
+
 
 
 
